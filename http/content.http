@@ -1,0 +1,101 @@
+### Create new company with id 1
+POST http://localhost:8080/companies
+Content-Type: application/json
+
+{
+  "name": "Company 1",
+  "description": "Description of company 1"
+}
+
+### Create new company with id 2
+POST http://localhost:8080/companies
+Content-Type: application/json
+
+{
+  "name": "Company 2",
+  "description": "Description of company 2"
+}
+
+### Create new review to company 1
+POST localhost:8080/companies/1/reviews
+Content-Type: application/json
+
+{
+  "title": "Review 1",
+  "description": "First review of the company 1",
+  "rating": 5.0
+}
+
+### Create new review to company 1
+POST localhost:8080/companies/1/reviews
+Content-Type: application/json
+
+{
+  "title": "Review 2",
+  "description": "Second review of the company 1",
+  "rating": 5.0
+}
+
+### Create new review to company 2
+POST localhost:8080/companies/2/reviews
+Content-Type: application/json
+
+{
+  "title": "Review 1",
+  "description": "First review of the company 2",
+  "rating": 5.0
+}
+
+### Create new job with id 1 to company 1
+POST http://localhost:8080/jobs
+Content-Type: application/json
+
+{
+  "title": "Full Stack Developer",
+  "description": "We are looking for a full stack developer",
+  "minSalary": "30000",
+  "maxSalary": "50000",
+  "location": "Seattle",
+  "company": {
+    "id": 1
+  }
+}
+
+### Create new job with id 2 to company 1
+POST http://localhost:8080/jobs
+Content-Type: application/json
+
+{
+  "title": "Backend Developer",
+  "description": "We are looking for a backend developer",
+  "minSalary": "10000",
+  "maxSalary": "30000",
+  "location": "Arizona",
+  "company": {
+    "id": 1
+  }
+}
+
+### Create new job with id 1 to company 2
+POST http://localhost:8080/jobs
+Content-Type: application/json
+
+{
+  "title": "Go Developer",
+  "description": "We are looking for a go developer",
+  "minSalary": "50000",
+  "maxSalary": "60000",
+  "location": "Manhattan",
+  "company": {
+    "id": 2
+  }
+}
+
+### Get all companies
+GET http://localhost:8080/companies
+
+### Get all reviews of the company 1
+GET http://localhost:8080/companies/1/reviews
+
+### Get all jobs
+GET http://localhost:8080/jobs
